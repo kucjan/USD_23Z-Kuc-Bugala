@@ -1,0 +1,21 @@
+!!python/object/apply:collections.OrderedDict
+- - - alive_bonus_offset
+    - -0.1
+  - - delta_std
+    - 0.0075
+  - - learning_rate
+    - 0.02
+  - - n_delta
+    - 64
+  - - n_envs
+    - 1
+  - - n_timesteps
+    - 100000000.0
+  - - n_top
+    - 32
+  - - normalize
+    - dict(norm_obs=True, norm_reward=False)
+  - - policy
+    - MlpPolicy
+  - - policy_kwargs
+    - dict(net_arch=[16])
