@@ -1,12 +1,12 @@
 !!python/object/apply:collections.OrderedDict
 - - - algo
-    - ars
+    - ddpg
   - - conf_file
-    - params/walker/ars_0.yml
+    - params/pendulum/ddpg_1.yml
   - - device
     - auto
   - - env
-    - BipedalWalker-v3
+    - InvertedDoublePendulumBulletEnv-v0
   - - env_kwargs
     - null
   - - eval_env_kwargs
@@ -14,7 +14,7 @@
   - - eval_episodes
     - 10
   - - eval_freq
-    - 10000
+    - 100
   - - gym_packages
     - []
   - - hyperparams
@@ -26,7 +26,7 @@
   - - max_total_trials
     - null
   - - n_eval_envs
-    - 2
+    - 1
   - - n_evaluations
     - null
   - - n_jobs
@@ -56,7 +56,7 @@
   - - save_replay_buffer
     - false
   - - seed
-    - 1880250842
+    - 1336924679
   - - storage
     - null
   - - study_name
