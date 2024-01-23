@@ -9,7 +9,7 @@ from src.plot_training import plot_eval_data
 if __name__ == "__main__":
     try:
         do_training = False
-        if len(sys.argv) == 5:
+        if len(sys.argv) == 5 and sys.argv[4] == "train":
             do_training = True
         elif len(sys.argv) < 4:
             raise ValueError(
@@ -67,7 +67,7 @@ if __name__ == "__main__":
                 [f"{key} {value}" for key, value in args_dict.items()]
             )
 
-            os.system(f"python -m rl_zoo3.train {args_string}")
+            os.system(f"python -m rl_zoo3.train {args_string} -P")
 
             print("\n" + "-" * 20 + "\n")
 
