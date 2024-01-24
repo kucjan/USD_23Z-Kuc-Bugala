@@ -1,9 +1,11 @@
 import sys
 import yaml
 import os
+import json
 
 sys.path.append("..")
 from src.plot_training import plot_eval_data
+from src.evaluation import evaluate_best_model
 
 
 if __name__ == "__main__":
@@ -57,7 +59,7 @@ if __name__ == "__main__":
         print("TRAINING PARAMS given for experiment:")
         with open(args_dict["--conf-file"], "r") as stream:
             params_yaml = yaml.safe_load(stream)
-        print(params_yaml)
+        print(json.dumps(params_yaml, indent=4))
 
         print("\n" + "-" * 20 + "\n")
 
@@ -70,6 +72,14 @@ if __name__ == "__main__":
             os.system(f"python -m rl_zoo3.train {args_string} -P")
 
             print("\n" + "-" * 20 + "\n")
+            
+        print("BEST MODEL EVALUATION:\n")
+        best_model_eval = evaluate_best_model(
+            train_dir=f"../logs/{algo}/{env}_{exp_id}"
+        )
+        for key, value in best_model_eval.items():
+            print(f"{key}: {value}")
+        print("\n" + "-" * 20 + "\n")
 
         print("PLOTTING EVALUATION DATA:")
         plot_eval_data(train_dir=f"../logs/{algo}/{env}_{exp_id}")

@@ -1,0 +1,13 @@
+InvertedDoublePendulumBulletEnv-v0:
+  batch_size: 256
+  buffer_size: 200000
+  gamma: 0.96
+  gradient_steps: 4
+  learning_rate: 1.0e-05
+  learning_starts: 10000
+  n_timesteps: 100000.0
+  noise_std: 0.05
+  noise_type: normal
+  policy: MlpPolicy
+  policy_kwargs: dict(net_arch=[500, 400])
+  train_freq: 1
