@@ -1,7 +1,7 @@
 BipedalWalker-v3:
   n_envs: 1
   policy: 'MlpPolicy'
-  n_timesteps: !!float 1e8
+  n_timesteps: !!float 1e5
   learning_rate: 0.02
   delta_std: 0.0075
   n_delta: 64

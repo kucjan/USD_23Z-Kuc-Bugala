@@ -1,0 +1,11 @@
+LunarLander-v2:
+  n_envs: 1
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  normalize: "dict(norm_obs=True, norm_reward=False)"
+  learning_rate: !!float 0.02
+  n_delta: 8
+  n_top: 2
+  delta_std: 0.15
+  policy_kwargs: "dict(net_arch=[16])"
+  zero_policy: False
