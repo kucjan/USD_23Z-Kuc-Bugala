@@ -87,7 +87,7 @@ if __name__ == "__main__":
         )
 
         print(
-            params_table.sort_values(by="avg_reward", ascending=False)
+            params_table.sort_values(by="avg_reward", ascending=False, ignore_index=True)
             .to_latex(
                 escape=True,
                 column_format="|l|" + "|".join("c" * len(params_table.columns)) + "|",
@@ -96,7 +96,7 @@ if __name__ == "__main__":
             .replace("\\\\", "\\\\ \hline")
         )
         print(
-            results_table.sort_values(by="avg_reward", ascending=False)
+            results_table.sort_values(by="avg_reward", ascending=False, ignore_index=True)
             .to_latex(
                 escape=True,
                 column_format="|l|" + "|".join("c" * len(results_table.columns) + "|"),
