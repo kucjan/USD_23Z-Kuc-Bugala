@@ -22,7 +22,9 @@ def evaluate_best_model(train_dir: str) -> dict:
         "min_reward": np.min(best_results),
         "max_reward": np.max(best_results),
         "avg_reward": np.mean(best_results),
+        "std_reward": np.std(best_results),
         "min_ep_length": np.min(best_ep_lengths),
         "max_ep_length": np.max(best_ep_lengths),
         "avg_ep_length": np.mean(best_ep_lengths),
+        "std_ep_length": np.std(best_ep_lengths),
     }
