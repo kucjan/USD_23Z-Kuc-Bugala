@@ -1,0 +1,13 @@
+InvertedDoublePendulumBulletEnv-v0:
+  n_timesteps: !!float 1.1e3
+  policy: 'MlpPolicy'
+  gamma: 0.98
+  buffer_size: 200000
+  learning_starts: 900
+  noise_type: 'normal'
+  noise_std: 0.1
+  gradient_steps: 1
+  train_freq: 1
+  batch_size: 256
+  learning_rate: !!float 7e-4
+  policy_kwargs: "dict(net_arch=[400, 300])"

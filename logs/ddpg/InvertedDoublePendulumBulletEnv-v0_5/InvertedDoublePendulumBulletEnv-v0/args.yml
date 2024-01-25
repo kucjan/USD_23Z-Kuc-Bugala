@@ -2,7 +2,7 @@
 - - - algo
     - ddpg
   - - conf_file
-    - null
+    - params/pendulum/ddpg_3.yml
   - - device
     - auto
   - - env
@@ -12,9 +12,9 @@
   - - eval_env_kwargs
     - null
   - - eval_episodes
-    - 5
+    - 100
   - - eval_freq
-    - 25000
+    - 10000
   - - gym_packages
     - []
   - - hyperparams
@@ -34,7 +34,7 @@
   - - n_startup_trials
     - 10
   - - n_timesteps
-    - 100000
+    - -1
   - - n_trials
     - 500
   - - no_optim_plots
@@ -56,7 +56,7 @@
   - - save_replay_buffer
     - false
   - - seed
-    - 3268976369
+    - 1878558682
   - - storage
     - null
   - - study_name

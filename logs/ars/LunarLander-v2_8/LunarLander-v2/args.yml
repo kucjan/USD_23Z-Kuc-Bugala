@@ -1,12 +1,20 @@
 !!python/object/apply:collections.OrderedDict
 - - - algo
-    - ars
+    - ddpg
   - - conf_file
+<<<<<<<< HEAD:logs/ars/LunarLander-v2_8/LunarLander-v2/args.yml
     - params/lander/ars_7.yml
   - - device
     - auto
   - - env
     - LunarLander-v2
+========
+    - params/pendulum/ddpg_0.yml
+  - - device
+    - auto
+  - - env
+    - InvertedDoublePendulumBulletEnv-v0
+>>>>>>>> jk_dev:logs/ddpg/InvertedDoublePendulumBulletEnv-v0_2/InvertedDoublePendulumBulletEnv-v0/args.yml
   - - env_kwargs
     - null
   - - eval_env_kwargs
@@ -56,7 +64,11 @@
   - - save_replay_buffer
     - false
   - - seed
+<<<<<<<< HEAD:logs/ars/LunarLander-v2_8/LunarLander-v2/args.yml
     - 4004658462
+========
+    - 4233349669
+>>>>>>>> jk_dev:logs/ddpg/InvertedDoublePendulumBulletEnv-v0_2/InvertedDoublePendulumBulletEnv-v0/args.yml
   - - storage
     - null
   - - study_name

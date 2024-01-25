@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 import numpy as np
 
-from constants import GRID_ALPHA
+from src.constants import GRID_ALPHA
 
 
-def plot_training_data(train_dir: str):
-    # train_data = pd.read_csv(f"{train_dir}/0.monitor.csv", skiprows=0, header=1)
+def plot_eval_data(train_dir: str, save: bool = False) -> None:
     evals_data = np.load(f"{train_dir}/evaluations.npz")
+
+    exp_id = train_dir.split("_")[-1]
 
     plt.figure(1)
     plt.plot(
@@ -39,9 +39,11 @@ def plot_training_data(train_dir: str):
 
     plt.ylabel("Reward")
     plt.xlabel("Timestep")
-    plt.title("Rewards for Evaluations")
+    # plt.title("Rewards for Evaluations")
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
+
+    plt.savefig(f"../output/training_eval_reward_{exp_id}.png")
 
     plt.figure(2)
     plt.plot(
@@ -71,15 +73,12 @@ def plot_training_data(train_dir: str):
         label="Min Value",
     )
 
-
     plt.ylabel("Episode Length")
     plt.xlabel("Timestep")
-    plt.title("Episode Lengths for Evaluations")
+    # plt.title("Episode Lengths for Evaluations")
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
 
+    plt.savefig(f"../output/training_eval_eplen_{exp_id}.png")
+
     plt.show()
-
-
-if __name__ == "__main__":
-    plot_training_data(train_dir="logs/ars/BipedalWalker-v3_4")

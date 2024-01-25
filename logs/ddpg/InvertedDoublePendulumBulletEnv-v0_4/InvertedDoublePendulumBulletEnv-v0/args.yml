@@ -2,19 +2,27 @@
 - - - algo
     - ddpg
   - - conf_file
-    - null
+<<<<<<<< HEAD:logs/ars/LunarLander-v2_9/LunarLander-v2/args.yml
+    - params/lander/ars_8.yml
+  - - device
+    - auto
+  - - env
+    - LunarLander-v2
+========
+    - params/pendulum/ddpg_2.yml
   - - device
     - auto
   - - env
     - InvertedDoublePendulumBulletEnv-v0
+>>>>>>>> jk_dev:logs/ddpg/InvertedDoublePendulumBulletEnv-v0_4/InvertedDoublePendulumBulletEnv-v0/args.yml
   - - env_kwargs
     - null
   - - eval_env_kwargs
     - null
   - - eval_episodes
-    - 5
+    - 100
   - - eval_freq
-    - 25000
+    - 10000
   - - gym_packages
     - []
   - - hyperparams
@@ -34,7 +42,7 @@
   - - n_startup_trials
     - 10
   - - n_timesteps
-    - 100000
+    - -1
   - - n_trials
     - 500
   - - no_optim_plots
@@ -56,7 +64,11 @@
   - - save_replay_buffer
     - false
   - - seed
-    - 1726393917
+<<<<<<<< HEAD:logs/ars/LunarLander-v2_9/LunarLander-v2/args.yml
+    - 2477415537
+========
+    - 250900870
+>>>>>>>> jk_dev:logs/ddpg/InvertedDoublePendulumBulletEnv-v0_4/InvertedDoublePendulumBulletEnv-v0/args.yml
   - - storage
     - null
   - - study_name
