@@ -82,21 +82,27 @@ if __name__ == "__main__":
             params_table.loc[len(params_table.index)] = params_dict
             results_table.loc[len(results_table.index)] = best_model_eval
 
-        params_table["learning_rate"] = params_table["learning_rate"].apply(scientific_notation)
+        params_table["learning_rate"] = params_table["learning_rate"].apply(
+            scientific_notation
+        )
 
         print(
-            params_table.to_latex(
+            params_table.sort_values(by="avg_reward", ascending=False)
+            .to_latex(
                 escape=True,
                 column_format="|l|" + "|".join("c" * len(params_table.columns)) + "|",
                 float_format="%.2f",
-            ).replace("\\\\", "\\\\ \hline")
+            )
+            .replace("\\\\", "\\\\ \hline")
         )
         print(
-            results_table.to_latex(
+            results_table.sort_values(by="avg_reward", ascending=False)
+            .to_latex(
                 escape=True,
                 column_format="|l|" + "|".join("c" * len(results_table.columns) + "|"),
                 float_format="%.2f",
-            ).replace("\\\\", "\\\\ \hline")
+            )
+            .replace("\\\\", "\\\\ \hline")
         )
 
     except ValueError as e:
