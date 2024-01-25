@@ -4,8 +4,10 @@ import numpy as np
 from src.constants import GRID_ALPHA
 
 
-def plot_eval_data(train_dir: str):
+def plot_eval_data(train_dir: str, save: bool = False) -> None:
     evals_data = np.load(f"{train_dir}/evaluations.npz")
+
+    exp_id = train_dir.split("_")[-1]
 
     plt.figure(1)
     plt.plot(
@@ -37,9 +39,11 @@ def plot_eval_data(train_dir: str):
 
     plt.ylabel("Reward")
     plt.xlabel("Timestep")
-    plt.title("Rewards for Evaluations")
+    # plt.title("Rewards for Evaluations")
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
+
+    plt.savefig(f"../output/training_eval_reward_{exp_id}.png")
 
     plt.figure(2)
     plt.plot(
@@ -71,8 +75,10 @@ def plot_eval_data(train_dir: str):
 
     plt.ylabel("Episode Length")
     plt.xlabel("Timestep")
-    plt.title("Episode Lengths for Evaluations")
+    # plt.title("Episode Lengths for Evaluations")
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
+
+    plt.savefig(f"../output/training_eval_eplen_{exp_id}.png")
 
     plt.show()
