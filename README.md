@@ -2,7 +2,7 @@
 
 ### Projekt końcowy z przedmiotu [USD] - Uczące się Systemy Decyzyjne
 **Temat**: </br>
-*LL10. rl-baselines3-zoo*
+*LL10. rl-baselines3-zoo* </br>
 Zapoznaj się z biblioteką *rl-baselines3-zoo* (https://rl-baselines3-zoo.readthedocs.io/en/master).
 Wybierz co najmniej 2 kombinacje środowisko+algorytm, dla których nie są dostępne zoptymalizowane hiperparametry (w miarę możliwości środowiska powinny być z różnych kategorii). Dokonaj optymalizacji hiperparametrów. Przedstaw wpływ hiperparametrów algorytmu na zachowanie wytrenowanego agenta (opisowo oraz - w miarę możliwości - wizualnie).
 
