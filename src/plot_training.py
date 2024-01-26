@@ -44,7 +44,8 @@ def plot_eval_data(algo: str, env: str, exp_id: int, save: bool = False) -> None
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
 
-    plt.savefig(f"../output/{algo}/training_eval_reward_{exp_id}.png")
+    if save:
+        plt.savefig(f"../output/{algo}/training_eval_reward_{exp_id}.png")
 
     plt.figure(2)
     plt.plot(
@@ -80,6 +81,7 @@ def plot_eval_data(algo: str, env: str, exp_id: int, save: bool = False) -> None
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
 
-    plt.savefig(f"../output/{algo}/training_eval_eplen_{exp_id}.png")
+    if save:
+        plt.savefig(f"../output/{algo}/training_eval_eplen_{exp_id}.png")
 
     plt.show()
