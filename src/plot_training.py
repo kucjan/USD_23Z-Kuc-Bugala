@@ -4,7 +4,8 @@ import numpy as np
 from src.constants import GRID_ALPHA
 
 
-def plot_eval_data(train_dir: str, save: bool = False) -> None:
+def plot_eval_data(algo: str, env: str, exp_id: int, save: bool = False) -> None:
+    train_dir = f"../logs/{algo}/{env}_{exp_id}"
     evals_data = np.load(f"{train_dir}/evaluations.npz")
 
     exp_id = train_dir.split("_")[-1]
@@ -43,7 +44,7 @@ def plot_eval_data(train_dir: str, save: bool = False) -> None:
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
 
-    plt.savefig(f"../output/training_eval_reward_{exp_id}.png")
+    plt.savefig(f"../output/{algo}/training_eval_reward_{exp_id}.png")
 
     plt.figure(2)
     plt.plot(
@@ -79,6 +80,6 @@ def plot_eval_data(train_dir: str, save: bool = False) -> None:
     plt.grid(axis="y", linestyle="--", alpha=GRID_ALPHA)
     plt.legend()
 
-    plt.savefig(f"../output/training_eval_eplen_{exp_id}.png")
+    plt.savefig(f"../output/{algo}/training_eval_eplen_{exp_id}.png")
 
     plt.show()

@@ -82,7 +82,7 @@ if __name__ == "__main__":
         print("\n" + "-" * 20 + "\n")
 
         print("PLOTTING EVALUATION DATA:")
-        plot_eval_data(train_dir=f"../logs/{algo}/{env}_{exp_id}", save=False)
+        plot_eval_data(algo, env, exp_id, save=True)
         print("\n" + "-" * 20 + "\n")
 
         print("DISPLAYING BEST MODEL BEHAVIOUR SIMULATION:")
