@@ -46,3 +46,4 @@ $ python3 reproduce.py ddpg InvertedDoublePendulumBulletEnv-v0 {exp_id} train
 ```bash
 $ deactivate
 ```
+9. W katalogu *output* zapisano przykładowe pliki z wykresami z historią treningu dla najlepszych zestawów hiperparametrów.

@@ -71,7 +71,7 @@ if __name__ == "__main__":
             for ind, line in enumerate(args_lines):
                 if line == "  - - conf_file":
                     break
-            # print(args_lines)
+
             params_file_path = args_lines[ind + 1].replace(" ", "").replace("-", "").replace("<<<<<<<<HEAD:","")
             # print(params_file_path)
             if params_file_path == "null": continue
