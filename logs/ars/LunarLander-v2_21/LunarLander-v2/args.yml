@@ -2,7 +2,7 @@
 - - - algo
     - ars
   - - conf_file
-    - params/lander/ars_16.yml
+    - params/lander/ars_9.yml
   - - device
     - auto
   - - env
@@ -56,7 +56,7 @@
   - - save_replay_buffer
     - false
   - - seed
-    - 4257882137
+    - 4076750815
   - - storage
     - null
   - - study_name

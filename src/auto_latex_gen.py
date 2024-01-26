@@ -11,7 +11,6 @@ def get_exp_ids(logs_dir: str, env: str) -> list:
     folders = os.listdir(logs_dir)
 
     ids = [int(folder.split("_")[-1]) for folder in folders if env in folder]
-
     return ids
 
 
@@ -28,16 +27,26 @@ if __name__ == "__main__":
 
         algo = sys.argv[1]
         env = sys.argv[2]
-
         exp_ids = get_exp_ids(f"logs/{algo}", env)
 
-        used_params = [
-            "gamma",
-            "learning_rate",
-            "noise_std",
-            "policy_kwargs",
-            "gradient_steps",
-        ]
+        if env == "InvertedDoublePendulumBulletEnv-v0":
+            used_params = [
+                "gamma",
+                "learning_rate",
+                "noise_std",
+                "policy_kwargs",
+                "gradient_steps",
+            ]
+        elif env == "LunarLander-v2":
+            used_params = [
+                "learning_rate",
+                "n_delta",
+                "n_top",
+                "delta_std",
+                "policy_kwargs"
+            ]
+        else:
+            raise Exception("Add used params to the script. Returning None.")
 
         results_cols = [
             "best_timestep",
@@ -55,15 +64,17 @@ if __name__ == "__main__":
             ARGS_FILE = PATH + "args.yml"
 
             with open(ARGS_FILE, "r") as stream:
-                args_yaml = stream.read()
+                args_yaml = stream.read()True
 
             args_lines = args_yaml.split("\n")[1:]
 
             for ind, line in enumerate(args_lines):
                 if line == "  - - conf_file":
                     break
-            params_file_path = args_lines[ind + 1].replace(" ", "").replace("-", "")
-
+            # print(args_lines)
+            params_file_path = args_lines[ind + 1].replace(" ", "").replace("-", "").replace("<<<<<<<<HEAD:","")
+            # print(params_file_path)
+            if params_file_path == "null": continue
             with open(params_file_path, "r") as params_file:
                 params_dict = yaml.safe_load(params_file)[env]
 
