@@ -64,7 +64,7 @@ if __name__ == "__main__":
             ARGS_FILE = PATH + "args.yml"
 
             with open(ARGS_FILE, "r") as stream:
-                args_yaml = stream.read()True
+                args_yaml = stream.read()
 
             args_lines = args_yaml.split("\n")[1:]
 
